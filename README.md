@@ -1,14 +1,10 @@
 # Block neural autoregressive flows
 
-[![status](http://www.repostatus.org/badges/latest/concept.svg)](http://www.repostatus.org/#concept)
 [![ci](https://github.com/dirmeier/block-neural-autoregressive-flow/actions/workflows/ci.yaml/badge.svg)](https://github.com/dirmeier/block-neural-autoregressive-flow/actions/workflows/ci.yaml)
-
-> A BNAF implementation in Flax
 
 ## About
 
-This repository implements a [block neural autoregressive flow](https://arxiv.org/abs/1904.04676)
-using JAX and Flax.
+This repository implements a [block neural autoregressive flow](https://arxiv.org/abs/1904.04676) using JAX and Flax.
 
 ## Example usage
 
@@ -18,7 +14,15 @@ the pullback  to the base distribution. Since the forward map, i.e., the pushfor
 computed analytically, we need to refer to a numerical approach. We could use a simple bisection,
 but it is computationally easier to just amortize it by fitting a neural network (MLP).
 
-To fit the BNAF and train an amortized inverter, call:
+To fit the BNAF and train an amortized inverter, first download the latest release
+and install all dependencies via:
+
+```bash
+wget -qO- https://github.com/dirmeier/block-neural-autoregressive-flow/archive/refs/tags/<TAG>>.tar.gz | tar zxvf -
+uv sync --all-groups
+```
+
+Then call:
 
 ```bash
 cd experiments/eight_gaussians
@@ -40,9 +44,9 @@ To install the latest GitHub <RELEASE>, just call the following on the
 command line:
 
 ```bash
-pip install git+https://github.com/dirmeier/block-neural-autoregressive-flow@<RELEASE>
+pip install git+https://github.com/dirmeier/block-neural-autoregressive-flow@<TAG>
 ```
 
 ## Author
 
-Simon Dirmeier <a href="mailto:sfyrbnd @ pm me">sfyrbnd @ pm me</a>
+Simon Dirmeier <a href="mailto:simd23@pm.me">simd23 @ pm dot me</a>
